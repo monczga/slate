@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>API Documentation</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -198,10 +198,10 @@
     </style>
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
+      <script src="javascripts/all_nosearch.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -210,295 +210,1586 @@
     </a>
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
-        </div>
-        <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
-        </div>
-        <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#bitclude" class="toc-h1 toc-link" data-title="Bitclude">Bitclude</a>
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#limitations-and-restrictions" class="toc-h1 toc-link" data-title="Limitations and restrictions">Limitations and restrictions</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#maximum-number-of-calls" class="toc-h2 toc-link" data-title="Maximum number of calls">Maximum number of calls</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#public-data" class="toc-h1 toc-link" data-title="Public Data">Public Data</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#orderbook" class="toc-h2 toc-link" data-title="Orderbook">Orderbook</a>
+                  </li>
+                  <li>
+                    <a href="#ticker" class="toc-h2 toc-link" data-title="Ticker">Ticker</a>
+                  </li>
+                  <li>
+                    <a href="#history" class="toc-h2 toc-link" data-title="History">History</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#private" class="toc-h1 toc-link" data-title="Private">Private</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-info" class="toc-h2 toc-link" data-title="Get info">Get info</a>
+                  </li>
+                  <li>
+                    <a href="#get-history" class="toc-h2 toc-link" data-title="Get history">Get history</a>
+                  </li>
+                  <li>
+                    <a href="#get-volumes" class="toc-h2 toc-link" data-title="Get volumes">Get volumes</a>
+                  </li>
+                  <li>
+                    <a href="#get-affiliation" class="toc-h2 toc-link" data-title="Get affiliation">Get affiliation</a>
+                  </li>
+                  <li>
+                    <a href="#get-deposits" class="toc-h2 toc-link" data-title="Get deposits">Get deposits</a>
+                  </li>
+                  <li>
+                    <a href="#get-withdrawals" class="toc-h2 toc-link" data-title="Get withdrawals">Get withdrawals</a>
+                  </li>
+                  <li>
+                    <a href="#get-limits" class="toc-h2 toc-link" data-title="Get limits">Get limits</a>
+                  </li>
+                  <li>
+                    <a href="#get-wallets-status" class="toc-h2 toc-link" data-title="Get wallets status">Get wallets status</a>
+                  </li>
+                  <li>
+                    <a href="#withdrawal-funds" class="toc-h2 toc-link" data-title="Withdrawal funds">Withdrawal funds</a>
+                  </li>
+                  <li>
+                    <a href="#withdrawal-funds-confirmation" class="toc-h2 toc-link" data-title="Withdrawal funds - confirmation">Withdrawal funds - confirmation</a>
+                  </li>
+                  <li>
+                    <a href="#account-login-history" class="toc-h2 toc-link" data-title="Account login history">Account login history</a>
+                  </li>
+                  <li>
+                    <a href="#freez-account" class="toc-h2 toc-link" data-title="Freez account">Freez account</a>
+                  </li>
+                  <li>
+                    <a href="#active-offers" class="toc-h2 toc-link" data-title="Active offers">Active offers</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#converter" class="toc-h1 toc-link" data-title="Converter">Converter</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#check-rate" class="toc-h2 toc-link" data-title="Check rate">Check rate</a>
+                  </li>
+                  <li>
+                    <a href="#convert" class="toc-h2 toc-link" data-title="Convert">Convert</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#transactions" class="toc-h1 toc-link" data-title="Transactions">Transactions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#buy-limit" class="toc-h2 toc-link" data-title="Buy [Limit]">Buy [Limit]</a>
+                  </li>
+                  <li>
+                    <a href="#sell-limit" class="toc-h2 toc-link" data-title="Sell [Limit]">Sell [Limit]</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-offer" class="toc-h2 toc-link" data-title="Cancel offer">Cancel offer</a>
+                  </li>
+                  <li>
+                    <a href="#bulk-offers-cancel" class="toc-h2 toc-link" data-title="Bulk offers cancel">Bulk offers cancel</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#websocket-feed" class="toc-h1 toc-link" data-title="WebSocket feed">WebSocket feed</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#description" class="toc-h2 toc-link" data-title="Description">Description</a>
+                  </li>
+                  <li>
+                    <a href="#subscribe-and-unsubscribe" class="toc-h2 toc-link" data-title="Subscribe and unsubscribe">Subscribe and unsubscribe</a>
+                  </li>
+                  <li>
+                    <a href="#headers" class="toc-h2 toc-link" data-title="Headers">Headers</a>
+                  </li>
+                  <li>
+                    <a href="#arguments" class="toc-h2 toc-link" data-title="Arguments">Arguments</a>
+                  </li>
+              </ul>
           </li>
       </ul>
-        <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+        <h1 id='bitclude'>Bitclude</h1>
+<p>In Bitclude we care about developers, if you have any suggestions please share them at <a href="mailto:support@bitclude.com">support@bitclude.com</a> please also note that due to the huge traffic passing through our servers, 
+we try to use only specific trading communication.</p>
 <h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>To autenticate you can use your API keys which you can generate in &#39;account&#39; tab, in case the keys leak please generate new one, if you will have probblem with that please contact <a href="mailto:support@bitclude.com">support@bitclude.com</a>.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>You can generate keys <a href="https://panel.bitclude.com/account">admin panel</a></p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Value</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
+<td>id</td>
+<td>INT</td>
 <td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>It is account id, can be find in &#39;account&#39; tab.</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>key</td>
+<td>STRING</td>
+<td>false</td>
+<td>It is token to authentication on API.</td>
 </tr>
 </tbody></table>
+
+<aside class="notice">
+You must generate <code>key</code> in your panel..
+</aside>
+<h1 id='limitations-and-restrictions'>Limitations and restrictions</h1><h2 id='maximum-number-of-calls'>Maximum number of calls</h2>
+<ul>
+<li>Public API 600 calls within 10 minutes.</li>
+<li>Private API 300 calls within 10 minutes. Limits are calculated in relation to IP address.</li>
+</ul>
+
+<p>If you wish to increase the limit, please contact us.</p>
+<h1 id='public-data'>Public Data</h1><h2 id='orderbook'>Orderbook</h2><pre class="highlight json tab-json"><code><span class="w">            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"market1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"market2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLN"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1556101333</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"0.01904635"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"20955.35"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"0.00701408"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"20933.70"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"0.07903711"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"21132.75"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"0.07052097"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"21141.04"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to get orderbook of single market</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/stats/orderbook_{market1}{market2}.json</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market1</td>
+<td>false</td>
+<td>btc, ltc, bch ...</td>
+</tr>
+<tr>
+<td>market2</td>
+<td>false</td>
+<td>btc, usd, eur ...</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+  <code>btc / fiat market1</code> is always btc and market2 is 'fiat' currency,
+ <br><code>crypto / btc market1</code> is always cryptocurrency and market2 is btc
+</aside>
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+  Example url: <code>https://api.bitclude.com/stats/orderbook_btcusd.json</code>
+<br> or <code>https://api.bitclude.com/stats/orderbook_ltcbtc.json</code>
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<h2 id='ticker'>Ticker</h2><pre class="highlight json tab-json"><code><span class="w">            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"btc_pln"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"bind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"crypto_fiat"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29008.57"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"ask"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1500.00"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"bid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500.00"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"volumen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.02255062"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"max24H"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29008.57"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"min24H"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500.00"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"change"</span><span class="p">:</span><span class="w"> </span><span class="s2">"96.61 %"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"ltc_btc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"bind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"crypto_crypto"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01395027"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"ask"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01404759"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"bid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01395797"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"volumen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01973978"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"max24H"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01395300"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"min24H"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01300340"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"change"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00 %"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="err">...</span><span class="w">
+            </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<p>This endpoint allow you to get whole ticker data for all currencies</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<p><code>GET https://api.bitclude.com/stats/ticker.json</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<p>none</p>
+<h2 id='history'>History</h2><pre class="highlight json tab-json"><code><span class="w">         </span><span class="p">{</span><span class="w">  
+            </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">  
+               </span><span class="s2">"market1"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"market2"</span><span class="p">:</span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="mi">1531917577</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"history"</span><span class="p">:[</span><span class="w">  
+               </span><span class="p">{</span><span class="w">  
+                  </span><span class="s2">"time"</span><span class="p">:</span><span class="mi">1531917229</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"nr"</span><span class="p">:</span><span class="s2">"786"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"0.00018620"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"7314.57"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"a"</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">  
+                  </span><span class="s2">"time"</span><span class="p">:</span><span class="mi">1531915300</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"nr"</span><span class="p">:</span><span class="s2">"783"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"0.00011760"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"7314.57"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"a"</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">  
+                  </span><span class="s2">"time"</span><span class="p">:</span><span class="mi">1531911605</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"nr"</span><span class="p">:</span><span class="s2">"776"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"0.00010240"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"7314.57"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"a"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
+<p>This endpoint allow you to get history on one market</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<p><code>GET https://api.bitclude.com/stats/history_{market1}{market2}.json</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Description</th>
+<th>Default</th>
+<th>Values</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>market1</td>
+<td>false</td>
+<td>btc, ltc, bch ...</td>
+</tr>
+<tr>
+<td>market2</td>
+<td>false</td>
+<td>btc, usd, eur ...</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
+
 <aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+  <code>btc / fiat market1</code> is always btc and market2 is 'fiat' currency,
+ <br><code>crypto / btc market1</code> is always cryptocurrency and market2 is btc
 </aside>
 
-<p>The Kittn API uses the following error codes:</p>
-
+<aside class="success">
+  Example url: <code>https://api.bitclude.com/stats/history_btcusd.json</code>
+<br>or <code>https://api.bitclude.com/stats/history_ltcbtc.json</code>
+</aside>
+<h1 id='private'>Private</h1><h2 id='get-info'>Get info</h2><pre class="highlight json tab-json"><code><span class="w">            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"nick"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@bitclude.com"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@bitclude.com"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+48000000000"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"key_default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..23082..."</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"last_ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kowalski"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"maker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"taker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"USD"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"inactive"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="err">...</span><span class="w">
+                    </span><span class="s2">"BTC"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.10458625"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"inactive"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00000000"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"deposit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"BTC"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"BCH"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"LTC"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"has_address"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"debit_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.03"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to get basic information about account</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td>method</td>
+<td>account</td>
+<td>Read from account</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>action</td>
+<td>info</td>
+<td>Get information</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
 </tr>
 <tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
 </tr>
 </tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+<h2 id='get-history'>Get history</h2><pre class="highlight json tab-json"><code><span class="w">         </span><span class="p">{</span><span class="w">
+             </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"history"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                 </span><span class="p">{</span><span class="w">
+                     </span><span class="s2">"currency1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"currency2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usd"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00003251"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"time_close"</span><span class="p">:</span><span class="w"> </span><span class="mi">1516130375</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15380.22"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"fee_taker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"fee_maker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bid"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"open"</span><span class="w">
+                 </span><span class="p">},</span><span class="w">
+                 </span><span class="p">{</span><span class="w">
+                     </span><span class="s2">"currency1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"currency2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usd"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00003251"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"time_close"</span><span class="p">:</span><span class="w"> </span><span class="mi">1516130376</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15380.22"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"fee_taker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"fee_maker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bid"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"open"</span><span class="w">
+                 </span><span class="p">},</span><span class="err">...</span><span class="w">
+                 </span><span class="p">{</span><span class="w">
+                     </span><span class="s2">"currency1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"currency2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usd"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00100000"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"time_close"</span><span class="p">:</span><span class="w"> </span><span class="mi">1516212758</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.00"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"fee_taker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"fee_maker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bid"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"open"</span><span class="w">
+                 </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to get history of all your transactions.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-5'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>account</td>
+<td>Read from account</td>
+</tr>
+<tr>
+<td>action</td>
+<td>history</td>
+<td>Get information</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+
+<aside class="notice">
+<code>fee taker</code> and <code>fee maker</code> represent 0.0001 * fee of trade.
+</aside>
+<h2 id='get-volumes'>Get volumes</h2><pre class="highlight json tab-json"><code><span class="w">         </span><span class="p">{</span><span class="w">
+             </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"volumes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                 </span><span class="p">{</span><span class="w">
+                     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.97140262"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="w">
+                 </span><span class="p">}</span><span class="w">
+             </span><span class="p">]</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to get history of all your transactions.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-6'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>account</td>
+<td>Read from account</td>
+</tr>
+<tr>
+<td>action</td>
+<td>volumes</td>
+<td>Get volumes</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+<h2 id='get-affiliation'>Get affiliation</h2><pre class="highlight json tab-json"><code><span class="w">            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"affiliate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"earned"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"verified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"registered"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"earnTabele"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"usd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"320.00"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"eur"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"gbp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"pln"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00205100"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"ltc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00000000"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"bch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00000000"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"list"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to get history of all your transactions.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-7'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>account</td>
+<td>Read from account</td>
+</tr>
+<tr>
+<td>action</td>
+<td>affiliate</td>
+<td>Get affiliations</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+<h2 id='get-deposits'>Get deposits</h2><pre class="highlight json tab-json"><code><span class="w">         </span><span class="p">{</span><span class="w">
+             </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"history"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                 </span><span class="p">{</span><span class="w">
+                     </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1530883428"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.13750000"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b787400027b4eae298bad72150384540a23342daaa3eec1c8d17459c103c6bbc"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+                 </span><span class="p">},</span><span class="w">
+                 </span><span class="p">{</span><span class="w">
+                     </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1530887151"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.06875000"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1cc2b5a1f05ffda29d669077e0c7aa23ee99be3bd767833a23d9ea8b6684dd3d"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+                 </span><span class="p">},</span><span class="w">
+                 </span><span class="p">{</span><span class="w">
+                     </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1531220889"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.10000000"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4b6ae6d18f670cda08245f610f36e4199ac889c9ab18eb085e2834d9a1dbddcf"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+                 </span><span class="p">}</span><span class="w">
+             </span><span class="p">]</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to get information about deposits.</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-8'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>account</td>
+<td>Read from account</td>
+</tr>
+<tr>
+<td>action</td>
+<td>deposits</td>
+<td>Get deposits</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>btc, usd..</td>
+<td>Currency of deposits</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+<h2 id='get-withdrawals'>Get withdrawals</h2><pre class="highlight json tab-json"><code><span class="w">         </span><span class="p">{</span><span class="w">
+             </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"history"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                 </span><span class="p">{</span><span class="w">
+                     </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1528545117"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.99482707"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"tx"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N8hwP1WmJrFF5QWABn38y63uYLhnJYJYTF"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+                 </span><span class="p">},</span><span class="w">
+                 </span><span class="p">{</span><span class="w">
+                     </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1528715035"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.00000000"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"tx"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N8hwP1WmJrFF5QWABn38y63uYLhnJYJYTF"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+                 </span><span class="p">},</span><span class="w">
+                 </span><span class="p">{</span><span class="w">
+                     </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1528812738"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00100000"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"tx"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N8hwP1WmJrFF5QWABn38y63uYLhnJYJYTF"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+                 </span><span class="p">},</span><span class="w">
+                 </span><span class="p">{</span><span class="w">
+                     </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1530883173"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.11589066"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"tx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01b8ae6437843879574b69daf95542aff43a4aefaa90e8f70ebf572eccf01cad"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2N8hwP1WmJrFF5QWABn38y63uYLhnJYJYTF"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+                 </span><span class="p">}</span><span class="w">
+             </span><span class="p">]</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to get information about withdrawals.</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-9'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>account</td>
+<td>Read from account</td>
+</tr>
+<tr>
+<td>action</td>
+<td>withdrawals</td>
+<td>Get withdrawals</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>btc, usd..</td>
+<td>Currency of deposits</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+<h2 id='get-limits'>Get limits</h2><pre class="highlight json tab-json"><code><span class="w">         </span><span class="p">{</span><span class="w">
+             </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"limitMonthly"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"limitYearly"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to get information about limits of user.</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-10'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>account</td>
+<td>Read from account</td>
+</tr>
+<tr>
+<td>action</td>
+<td>limits</td>
+<td>Get limits</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+<h2 id='get-wallets-status'>Get wallets status</h2><pre class="highlight json tab-json"><code><span class="w">         </span><span class="p">{</span><span class="w">
+             </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                 </span><span class="s2">"last_block_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"344353"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"node_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"is_online"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"connections"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"current_optimal_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00002500"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"current_minimum_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00100000"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"decimal_point"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"confirmations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+             </span><span class="p">},</span><span class="w">
+             </span><span class="s2">"usd"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                 </span><span class="s2">"last_block_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"node_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"is_online"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"connections"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"current_optimal_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.00"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"current_minimum_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.00"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"decimal_point"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"confirmations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+             </span><span class="p">},</span><span class="err">...</span><span class="w">
+             </span><span class="s2">"chf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                 </span><span class="s2">"last_block_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"node_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"is_online"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"connections"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"current_optimal_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.00"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"current_minimum_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.00"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"decimal_point"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"confirmations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+             </span><span class="p">}</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to get information about currencies, minimum transfers, fees, and online status.</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-11'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>account</td>
+<td>Read from account</td>
+</tr>
+<tr>
+<td>action</td>
+<td>getwalletsstatus</td>
+<td>Get getwalletsstatus</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>btc, usd..</td>
+<td>Currency of deposits</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+<h2 id='withdrawal-funds'>Withdrawal funds</h2><pre class="highlight json tab-json"><code><span class="w">            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5039"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdrawal request has been submitted"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to get information about limits of user.</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-12'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>account</td>
+<td>Read from account</td>
+</tr>
+<tr>
+<td>action</td>
+<td>withdrawal</td>
+<td>Init withdrawal</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>btc, usd..</td>
+<td>Currency of deposits</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>STRING</td>
+<td>Amount in string for eg. &#39;10.00&#39;</td>
+</tr>
+<tr>
+<td>address</td>
+<td>STRING</td>
+<td>IBAN or Cryptocurrency address</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+<h2 id='withdrawal-funds-confirmation'>Withdrawal funds - confirmation</h2><pre class="highlight json tab-json"><code><span class="w">         </span><span class="p">{</span><span class="w">
+             </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdrawal request has been submited"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to get information about limits of user.</p>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-13'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>account</td>
+<td>Read from account</td>
+</tr>
+<tr>
+<td>action</td>
+<td>withdrawalconfirm</td>
+<td>Confirm</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+<tr>
+<td>token</td>
+<td>STRING</td>
+<td>Token send via email - eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+  
+
+<aside class="notice">  
+<code>token</code> Due the security resons confirmation tokens are send via email.
+</aside>
+<h2 id='account-login-history'>Account login history</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1556024864185000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"282.102.20.212"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copenhagen"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Denmark"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (...)"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Correct standard authorization"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DK"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to get information about login history.</p>
+<h3 id='http-request-14'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-14'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>account</td>
+<td>Read from account</td>
+</tr>
+<tr>
+<td>action</td>
+<td>history</td>
+<td>Confirm</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+<h2 id='freez-account'>Freez account</h2><pre class="highlight json tab-json"><code><span class="w">         </span><span class="p">{</span><span class="w">
+             </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account freezed"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to freez your account.</p>
+<h3 id='http-request-15'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-15'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>account</td>
+<td>Read from account</td>
+</tr>
+<tr>
+<td>action</td>
+<td>freeze</td>
+<td>Confirm</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+<h2 id='active-offers'>Active offers</h2><pre class="highlight json tab-json"><code><span class="w">          </span><span class="p">{</span><span class="w">
+             </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"offers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                 </span><span class="p">{</span><span class="w">
+                     </span><span class="s2">"nr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1053"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"currency1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ltc"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"currency2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.50000000"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00200000"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"id_user_open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"717998789"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"time_open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1531132114012"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"offertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bid"</span><span class="w">
+                 </span><span class="p">}</span><span class="w">
+             </span><span class="p">]</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to get your current active offers.</p>
+<h3 id='http-request-16'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-16'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>account</td>
+<td>Read from account</td>
+</tr>
+<tr>
+<td>action</td>
+<td>activeoffers</td>
+<td>Get offers</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+<h1 id='converter'>Converter</h1><h2 id='check-rate'>Check rate</h2><pre class="highlight json tab-json"><code><span class="w">        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fulfilled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"midRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"524.15"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"endRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"midAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"104.83"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"endAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.52"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"524.15"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ratePublic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"524.15"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amountReceive"</span><span class="p">:</span><span class="w"> </span><span class="s2">"104.83"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to check rate of conversion.</p>
+<h3 id='http-request-17'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-17'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>account</td>
+<td>Read from account</td>
+</tr>
+<tr>
+<td>action</td>
+<td>convertercheck</td>
+<td>Confirm</td>
+</tr>
+<tr>
+<td>market1</td>
+<td>btc, usd..</td>
+<td>Currency from</td>
+</tr>
+<tr>
+<td>market2</td>
+<td>btc, usd..</td>
+<td>Currency to</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>STRING</td>
+<td>eg. &#39;10.00&#39;</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+<h2 id='convert'>Convert</h2><pre class="highlight json tab-json"><code><span class="w">        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5067"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.07"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amountReceived"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14.83"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your coins has been successfully converted"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ordersConsumed"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"sell"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                         </span><span class="s2">"2583"</span><span class="w">
+                         </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                 </span><span class="p">}</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to simple convert your currencies.</p>
+<h3 id='http-request-18'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-18'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>account</td>
+<td>Read from account</td>
+</tr>
+<tr>
+<td>action</td>
+<td>convert</td>
+<td>Confirm</td>
+</tr>
+<tr>
+<td>market1</td>
+<td>btc, usd..</td>
+<td>Currency from</td>
+</tr>
+<tr>
+<td>market2</td>
+<td>btc, usd..</td>
+<td>Currency to</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>STRING</td>
+<td>eg. &#39;10.00&#39;</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+<h1 id='transactions'>Transactions</h1><h2 id='buy-limit'>Buy [Limit]</h2><pre class="highlight json tab-json"><code><span class="w">          </span><span class="p">{</span><span class="w">
+             </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5053"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                 </span><span class="s2">"buy"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                 </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5880"</span><span class="w">
+             </span><span class="p">},</span><span class="w">
+             </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order has been submited"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to buy orders with &#39;limit&#39; order.</p>
+<h3 id='http-request-19'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-19'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>transactions</td>
+<td>Transaction statement</td>
+</tr>
+<tr>
+<td>action</td>
+<td>buy</td>
+<td>Buy on market base currency</td>
+</tr>
+<tr>
+<td>market1</td>
+<td>btc, usd..</td>
+<td>First currency of market naming</td>
+</tr>
+<tr>
+<td>market2</td>
+<td>btc, usd..</td>
+<td>Seconde currency of market naming</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>STRING</td>
+<td>eg. &#39;10.00&#39;</td>
+</tr>
+<tr>
+<td>rate</td>
+<td>STRING</td>
+<td>eg. &#39;5320.24&#39;</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+
+<aside class="notice">
+ Please note that <code>market1</code> and <code>market2</code> here are used as naming of markets so market <code>btc/usd</code>, 
+ <br>have <code>market1 = btc</code> and <code>market2 = usd</code> don't metter if you buy or sell
+</aside>
+<h2 id='sell-limit'>Sell [Limit]</h2><pre class="highlight json tab-json"><code><span class="w">         </span><span class="p">{</span><span class="w">
+             </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5053"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                 </span><span class="s2">"sell"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                 </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5880"</span><span class="w">
+             </span><span class="p">},</span><span class="w">
+             </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order has been submited"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to sell orders with &#39;limit&#39; order.</p>
+<h3 id='http-request-20'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-20'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>transactions</td>
+<td>Transaction statement</td>
+</tr>
+<tr>
+<td>action</td>
+<td>buy</td>
+<td>Buy on market base currency</td>
+</tr>
+<tr>
+<td>market1</td>
+<td>btc, usd..</td>
+<td>First currency of market naming</td>
+</tr>
+<tr>
+<td>market2</td>
+<td>btc, usd..</td>
+<td>Seconde currency of market naming</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>STRING</td>
+<td>eg. &#39;10.00&#39;</td>
+</tr>
+<tr>
+<td>rate</td>
+<td>STRING</td>
+<td>eg. &#39;5320.24&#39;</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+
+<aside class="notice">
+ Please note that <code>market1</code> and <code>market2</code> here are used as naming of markets so market <code>btc/usd</code>, 
+ <br>have <code>market1 = btc</code> and <code>market2 = usd</code> don't metter if you buy or sell
+</aside>
+<h2 id='cancel-offer'>Cancel offer</h2><pre class="highlight json tab-json"><code><span class="w">         </span><span class="p">{</span><span class="w">
+             </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5053"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                 </span><span class="s2">"sell"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                 </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5880"</span><span class="w">
+             </span><span class="p">},</span><span class="w">
+             </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order has been submited"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to cancel your oder</p>
+<h3 id='http-request-21'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-21'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>transactions</td>
+<td>Transaction statement</td>
+</tr>
+<tr>
+<td>action</td>
+<td>cancel</td>
+<td>Cancel one offer</td>
+</tr>
+<tr>
+<td>order</td>
+<td>INT</td>
+<td>Id of offer</td>
+</tr>
+<tr>
+<td>typ</td>
+<td>bid or ask</td>
+<td>Type of offer</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+<h2 id='bulk-offers-cancel'>Bulk offers cancel</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+        </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5059"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Orders has been canceled"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to bulkoffers cancel.</p>
+<h3 id='http-request-22'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-22'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>transaction</td>
+<td>Read from account</td>
+</tr>
+<tr>
+<td>action</td>
+<td>canceloffers</td>
+<td>Confirm</td>
+</tr>
+<tr>
+<td>bid</td>
+<td>ARRAY</td>
+<td>Offers ID, eg. [&quot;1053&quot;,&quot;1054&quot;]</td>
+</tr>
+<tr>
+<td>ask</td>
+<td>ARRAY</td>
+<td>Offers ID, eg. [&quot;1055&quot;,&quot;1056&quot;]</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
+<h1 id='websocket-feed'>WebSocket feed</h1>
+<p>The websocket feed delivers real-time market data updates for orders, trades, status and tickers.</p>
+
+<p><code>wss://n1.ws.bitclude.com</code></p>
+<h3 id='description'>Description</h3>
+<p>Real-time market data updates provide the fastest insight into order flow and trades. This however means that you are responsible for reading the message stream and using the message relevant for your needs which can include building real-time order books or tracking real-time trades.
+The websocket feed is publicly available.</p>
+<h2 id='subscribe-and-unsubscribe'>Subscribe and unsubscribe</h2>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">      </span><span class="p">{</span><span class="w">
+          </span><span class="err">op</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscribe"</span><span class="p">,</span><span class="w"> 
+          </span><span class="err">headers</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">id</span><span class="p">:</span><span class="w"> </span><span class="s2">"39013"</span><span class="p">,</span><span class="w"> </span><span class="err">token</span><span class="p">:</span><span class="w"> </span><span class="s2">"54a44eb00b63f4d1cdde9..."</span><span class="p">},</span><span class="w"> 
+          </span><span class="err">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"all"</span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">      
+
+      </span><span class="p">{</span><span class="w">
+          </span><span class="err">op</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscribe"</span><span class="p">,</span><span class="w">
+          </span><span class="err">headers</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">id</span><span class="p">:</span><span class="w"> </span><span class="s2">"39013"</span><span class="p">,</span><span class="w"> </span><span class="err">token</span><span class="p">:</span><span class="w"> </span><span class="s2">"54a44eb00b63f4d1cdde9..."</span><span class="p">},</span><span class="w"> 
+          </span><span class="err">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+             </span><span class="s2">"trades:BTC_USD"</span><span class="w"> </span><span class="p">,</span><span class="w"> 
+              </span><span class="s2">"orderbooks:BTC_USD"</span><span class="p">,</span><span class="w"> 
+              </span><span class="s2">"balances:BTC"</span><span class="p">,</span><span class="w"> 
+              </span><span class="s2">"balances:USD"</span><span class="p">,</span><span class="w"> 
+              </span><span class="s2">"connected:all"</span><span class="p">,</span><span class="w"> 
+              </span><span class="s2">"tickers:all"</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Selection of the query option <code>op</code> </p>
+<h3 id='connect'>Connect</h3>
+<p>To start receiving fed messages, you must first send a <code>subscribe</code> message to the server indicating which arguments do you want to receive.</p>
+<pre class="highlight json tab-json"><code><span class="w">       </span><span class="p">{</span><span class="w">
+          </span><span class="err">op</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsubscribe"</span><span class="p">,</span><span class="w">
+          </span><span class="err">headers</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">id</span><span class="p">:</span><span class="w"> </span><span class="s2">"39013"</span><span class="p">,</span><span class="w"> </span><span class="err">token</span><span class="p">:</span><span class="w"> </span><span class="s2">"54a44eb00b63f4d1cdde9..."</span><span class="p">},</span><span class="w"> 
+          </span><span class="err">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+             </span><span class="s2">"trades:BTC_USD"</span><span class="w"> </span><span class="p">,</span><span class="w"> 
+              </span><span class="s2">"orderbooks:BTC_USD"</span><span class="p">,</span><span class="w"> 
+              </span><span class="s2">"connected:all"</span><span class="p">,</span><span class="w"> 
+              </span><span class="s2">"tickers:all"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='disconnect'>Disconnect</h3>
+<p>When you want to stop receiving information from some of the arguments, send an <code>unsubscribe</code> message. The structure is similar to <code>subscribe</code> messages.</p>
+<h2 id='headers'>Headers</h2><pre class="highlight json tab-json"><code><span class="w">      </span><span class="p">{</span><span class="w">
+          </span><span class="err">op</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscribe"</span><span class="p">,</span><span class="w"> 
+          </span><span class="err">headers</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">id</span><span class="p">:</span><span class="w"> </span><span class="s2">"39013"</span><span class="p">,</span><span class="w"> </span><span class="err">token</span><span class="p">:</span><span class="w"> </span><span class="s2">"54a44eb00b63f4d1cdde9..."</span><span class="p">},</span><span class="w"> 
+          </span><span class="err">args</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"all"</span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>For <code>headers</code> we can specify the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 71834</td>
+</tr>
+<tr>
+<td>token</td>
+<td>STRING</td>
+<td>eg .54a44eb00b639...</td>
+</tr>
+</tbody></table>
+<h2 id='arguments'>Arguments</h2>
+<p>For <code>args</code> we can specify the fallowing parameters:       </p>
+<pre class="highlight json tab-json"><code><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="err">action</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade"</span><span class="p">,</span><span class="w"> </span><span class="err">symbol</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC_USD"</span><span class="p">,</span><span class="w"> </span><span class="err">size</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00230000"</span><span class="p">,</span><span class="w"> </span><span class="err">price</span><span class="p">:</span><span class="w"> </span><span class="s2">"1932.00"</span><span class="p">,</span><span class="w"> </span><span class="err">side</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buy"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>TRADES</strong><br>
+  eg. trades:BTC_USD<br>
+  alt. trades:all<br></p>
+<pre class="highlight json tab-json"><code><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="err">action</span><span class="p">:</span><span class="w"> </span><span class="s2">"orderbook"</span><span class="p">,</span><span class="w"> </span><span class="err">symbol</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC_USD"</span><span class="p">,</span><span class="w"> </span><span class="err">size</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00230000"</span><span class="p">,</span><span class="w"> </span><span class="err">price</span><span class="p">:</span><span class="w"> </span><span class="s2">"1932.00"</span><span class="p">,</span><span class="w"> </span><span class="err">side</span><span class="p">:</span><span class="w"> </span><span class="s2">"bid"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>ORDERBOOKS</strong><br>
+            eg. orderbooks:BTC_USD<br>
+            alt. orderbooks:all<br></p>
+<pre class="highlight json tab-json"><code><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="err">action</span><span class="p">:</span><span class="w"> </span><span class="s2">"connected"</span><span class="p">,</span><span class="w"> </span><span class="err">connected</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w"> </span><span class="err">time</span><span class="p">:</span><span class="w"> </span><span class="mi">1555327761477</span><span class="p">,</span><span class="w"> </span><span class="err">telemtric</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">last_server</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w"> </span><span class="err">last_user</span><span class="p">:</span><span class="w"> </span><span class="mi">32423</span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>CONNECTED</strong><br>
+            eg. connected<br><br></p>
+<pre class="highlight json tab-json"><code><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="err">action</span><span class="p">:</span><span class="w"> </span><span class="s2">"ticker"</span><span class="p">,</span><span class="w"> </span><span class="err">symbol</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC_USD"</span><span class="p">,</span><span class="w"> </span><span class="err">last</span><span class="p">:</span><span class="w"> </span><span class="s2">"1932.00"</span><span class="p">,</span><span class="w"> </span><span class="err">volume</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.32400000"</span><span class="p">,</span><span class="w"> </span><span class="err">change</span><span class="p">:</span><span class="w"> </span><span class="s2">"- 2.00%"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>TICKERS</strong><br>
+             eg. tickers:BTC_USD<br>
+             alt. tickers:all<br></p>
+<pre class="highlight json tab-json"><code><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="err">action</span><span class="p">:</span><span class="w"> </span><span class="s2">"execution"</span><span class="p">,</span><span class="w"> </span><span class="err">symbol</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC_USD"</span><span class="p">,</span><span class="w"> </span><span class="err">size</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00230000"</span><span class="p">,</span><span class="w"> </span><span class="err">price</span><span class="p">:</span><span class="w"> </span><span class="s2">"1932.00"</span><span class="p">,</span><span class="w"> </span><span class="err">side</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buy"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>EXECUTIONS</strong><br>
+            eg. executions:BTC<br><br></p>
+<pre class="highlight json tab-json"><code><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="err">action</span><span class="p">:</span><span class="w"> </span><span class="s2">"balance"</span><span class="p">,</span><span class="w"> </span><span class="err">symbol</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w"> </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">active</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00032333"</span><span class="p">,</span><span class="w"> </span><span class="err">inactive</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.232333333"</span><span class="p">}}</span><span class="w">
+</span></code></pre>
+<p><strong>BALANCES</strong><br>
+             eg. balances:BTC<br>
+             alt. balances:all<br></p>
+<pre class="highlight json tab-json"><code><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="err">action</span><span class="p">:</span><span class="w"> </span><span class="err">order</span><span class="p">,</span><span class="w"> </span><span class="err">symbol</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC_USD"</span><span class="p">,</span><span class="w"> </span><span class="err">prop</span><span class="p">:</span><span class="w"> </span><span class="s2">"new"</span><span class="p">,</span><span class="w"> </span><span class="err">price</span><span class="p">:</span><span class="w"> </span><span class="s2">"19203.32"</span><span class="p">,</span><span class="w"> </span><span class="err">size</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00012333"</span><span class="p">,</span><span class="w"> </span><span class="err">slide</span><span class="p">:</span><span class="w"> </span><span class="s2">"ask"</span><span class="p">,</span><span class="w"> </span><span class="err">id</span><span class="p">:</span><span class="w"> </span><span class="mi">999</span><span class="p">}</span><span class="w">
+   </span><span class="p">{</span><span class="w"> </span><span class="err">action</span><span class="p">:</span><span class="w"> </span><span class="err">order</span><span class="p">,</span><span class="w"> </span><span class="err">symbol</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC_USD"</span><span class="p">,</span><span class="w"> </span><span class="err">prop</span><span class="p">:</span><span class="w"> </span><span class="s2">"remove"</span><span class="p">,</span><span class="w"> </span><span class="err">price</span><span class="p">:</span><span class="w"> </span><span class="s2">"19203.32"</span><span class="p">,</span><span class="w"> </span><span class="err">size</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00012333"</span><span class="p">,</span><span class="w"> </span><span class="err">slide</span><span class="p">:</span><span class="w"> </span><span class="s2">"ask"</span><span class="p">,</span><span class="w"> </span><span class="err">id</span><span class="p">:</span><span class="w"> </span><span class="mi">999</span><span class="p">}</span><span class="w">
+   </span><span class="p">{</span><span class="w"> </span><span class="err">action</span><span class="p">:</span><span class="w"> </span><span class="err">order</span><span class="p">,</span><span class="w"> </span><span class="err">symbol</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC_USD"</span><span class="p">,</span><span class="w"> </span><span class="err">prop</span><span class="p">:</span><span class="w"> </span><span class="s2">"change"</span><span class="p">,</span><span class="w"> </span><span class="err">price</span><span class="p">:</span><span class="w"> </span><span class="s2">"19203.32"</span><span class="p">,</span><span class="w"> </span><span class="err">size</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00001000"</span><span class="p">,</span><span class="w"> </span><span class="err">slide</span><span class="p">:</span><span class="w"> </span><span class="s2">"ask"</span><span class="p">,</span><span class="w"> </span><span class="err">id</span><span class="p">:</span><span class="w"> </span><span class="mi">999</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>ORDERS</strong><br>
+             eg. orders:BTC_USD<br>
+             alt. orders:all<br><br></p>
+<pre class="highlight json tab-json"><code><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="err">action</span><span class="p">:</span><span class="w"> </span><span class="err">deposit</span><span class="p">,</span><span class="w"> </span><span class="err">symbol</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w"> </span><span class="err">size</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01432432"</span><span class="p">}</span><span class="w">
+   </span><span class="p">{</span><span class="w"> </span><span class="err">action</span><span class="p">:</span><span class="w"> </span><span class="err">withdrawal</span><span class="p">,</span><span class="w"> </span><span class="err">symbol</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w"> </span><span class="err">size</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01432432"</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>WALLETS</strong><br>
+            eg wallets:BTC<br>
+            alt. wallets:all<br></p>
+
+<aside class="notice">
+For <b>private</b> (executions,balances,orders,wallets) args you need <code>id</code> and <code>token</code>
+</aside>
+        
 
       </div>
       <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
-          </div>
       </div>
     </div>
   </body>

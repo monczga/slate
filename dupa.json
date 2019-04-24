@@ -1,0 +1,143 @@
+Connect
+{
+  op: "subscribe",
+  headers: {},
+  args: []
+}
+eg. {
+  op: "subscribe",
+  headers: {
+    id,
+    token
+  },
+  args: [
+    "all"
+  ]
+}
+eg. {
+  op: "subscribe",
+  headers: {
+    id,
+    token
+  },
+  args: [
+    "trades:BTC_USD",
+    "orderbooks:BTC_USD",
+    "balances:BTC",
+    "balances:USD",
+    "connected:all",
+    "tickers:all"
+  ]
+}
+
+Return (with proper subscriptions)
+{
+  "success": true,
+  "subscriptions": {
+    "trades": [
+      "BTC_USD"
+    ],
+    "orderbooks": [],
+    "connected": [],
+    "balances": [],
+    "orders": [],
+    "wallets": []
+  },
+  "message": "You have subscribe"
+}
+
+headers:
+[subscription tokens]: id: INT
+token: STRING
+
+args:
+[subscription_topics]:
+
+[
+PUBLIC -  DON'T REQUIRE AUTHENTICATION]
+trades
+eg. trades: BTC_USD
+alt. trades: all
+{action: "trade", symbol: "BTC_USD", size: "0.00230000", price: "1932.00", side: "Buy"}
+
+orderbooks
+eg. orderbooks: BTC_USD
+alt. orderbooks: all
+{action: "orderbook", symbol: "BTC_USD", size: "0.00230000", price: "1932.00", side: "bid"}
+
+connected
+eg connected
+{action: "connected", connected: 99, time: 1555327761477, telemtric: {last_server: 43, last_user: 32423}
+}
+
+
+tickers
+eg. tickers: BTC_USD
+alt. tickers:all
+{
+action: "ticker", symbol: "BTC_USD", last: "1932.00", volume: "0.32400000", change: "- 2.00%"}
+
+
+[PRIVATE - REQUIRE AUTHENTICATION]
+executions
+eg. executions: BTC
+{action: "execution", symbol: "BTC_USD", size: "0.00230000", price: "1932.00", side: "Buy"}
+balances
+eg. balances:BTC
+alt. balances: all
+{
+action: "balance", symbol: "BTC", value: {active: "0.00032333", inactive: "0.232333333"
+}
+}
+
+orders
+eg. orders:BTC_USD
+alt. orders: all
+{
+action: order, symbol: "BTC_USD", prop: "new", price: "19203.32", size: "0.00012333", slide: "ask", id: 999}
+{action: order, symbol: "BTC_USD", prop: "remove", price: "19203.32", size: "0.00012333", slide: "ask", id: 999
+}
+{
+action: order, symbol: "BTC_USD", prop: "change", price: "19203.32", size: "0.00001000", slide: "ask", id: 999}
+wallets
+eg wallets: BTC
+alt. wallets:all
+{
+action: deposit, symbol: "BTC", size: "0.01432432"}
+{action: withdrawal, symbol: "BTC", size: "0.01432432"
+}
+
+
+Disconnect
+{
+op: "unsubscribe", headers: {id, token}, args: []}
+
+
+* Documentation for server implementation
+*
+
+id: 0 - root
+token: config.key
+
+{
+op: "server",
+headers: {id, token},
+args: {
+"type": "private" or "public"
+"id": null or INT,
+"package": with standard above
+}
+}
+
+eg
+{
+op: "server",
+headers: {0, "token"},
+args: {
+"type": "public"
+"id": null,
+"package": {
+action: "trade", symbol: "BTC_USD", size: "0.00230000", price: "1932.00", side: "Buy"
+}
+}
+}
