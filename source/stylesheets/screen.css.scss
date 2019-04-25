@@ -20,6 +20,36 @@ License for the specific language governing permissions and limitations
 under the License.
 */
 
+//
+//ZAJEBANE
+//
+
+.navbar-container .navbar {
+  position: fixed!important;
+  width: 100%!important;
+  height: 70px;
+  background: #2b71b1;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 5000;
+}
+
+.navbar {
+  width: 100%;
+  border-bottom: 1px solid rgba(0,0,0,.15);
+  background-color: #fff;
+  position: fixed;
+}
+
+
+nav ul {
+  padding: 0;
+  margin-top: 20px;
+  margin-right: 20px;
+  display: block;
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // GENERAL STUFF
 ////////////////////////////////////////////////////////////////////////////////
@@ -75,6 +105,7 @@ html, body {
   .logo {
     display: block;
     max-width: 100%;
+    margin-top: $logo-margin;
     margin-bottom: $logo-margin;
   }
 
@@ -153,20 +184,23 @@ html, body {
 
   // This is the currently selected ToC entry
   .toc-link.active {
+    border-left: 5px solid $nav-active-border;
     background-color: $nav-active-bg;
-    color: $nav-active-text;
+    color: $nav-text;
+    padding-left: 10px;
+    font-weight: bold;
   }
 
   // this is parent links of the currently selected ToC entry
-  .toc-link.active-parent {
-    background-color: $nav-active-parent-bg;
-    color: $nav-active-parent-text;
-  }
+  //.toc-link.active-parent {
+  //  background-color: $nav-active-parent-bg;
+  //  color: $nav-active-parent-text;
+  //}
 
   .toc-list-h2 {
     display: none;
     background-color: $nav-subitem-bg;
-    font-weight: 500;
+    //font-weight: 500;
   }
 
   .toc-h2 {

@@ -2,18 +2,26 @@
 title: Bitclude - API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-    - json
+    - jsonnet: 
 
 toc_footers:
   - <a href='https://panel.bitclude.com/account'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
-<!-- includes:
-  - errors
- -->
+includes:
 
 search: true
 ---
+<div class="navbar-container">
+    <nav class="navbar">
+    <a class="logo-container" href="/"><div class="logo"></div></a>
+    <ul>
+    <li><a href="https://blog.bitclude.com/">Blog</a></li>
+    <li><a href="https://panel.bitclude.com">Dashboard</a>
+    <li><a href="https://status.bitclude.com">Status</a></li>
+    </ul>
+    </nav>
+</div>
 
 # Bitclude
 
@@ -1078,7 +1086,7 @@ For `args` we can specify the fallowing parameters:
             eg wallets:BTC<br>
             alt. wallets:all<br>
 
-<aside class="notice">
+<aside class="warning">
 For <b>private</b> (executions,balances,orders,wallets) args you need <code>id</code> and <code>token</code>
 </aside>
         
