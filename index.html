@@ -267,6 +267,9 @@
                     <a href="#get-limits" class="toc-h2 toc-link" data-title="Get limits">Get limits</a>
                   </li>
                   <li>
+                    <a href="#get-socket-token" class="toc-h2 toc-link" data-title="Get socket token">Get socket token</a>
+                  </li>
+                  <li>
                     <a href="#get-wallets-status" class="toc-h2 toc-link" data-title="Get wallets status">Get wallets status</a>
                   </li>
                   <li>
@@ -968,6 +971,49 @@ You must generate <code>key</code> in your panel..
 <aside class="notice">
 <code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
 </aside>
+<h2 id='get-socket-token'>Get socket token</h2><pre class="highlight json tab-json"><code><span class="w">        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"socket_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to get information about your sockettoken.</p>
+
+<p>[More about WebSocket]&lt;#websocket-feed&gt;</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>GET https://api.bitclude.com/</code></p>
+<h3 id='query-parameters-11'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>account</td>
+<td>Read from account</td>
+</tr>
+<tr>
+<td>action</td>
+<td>getsockettoken</td>
+<td>Get limits</td>
+</tr>
+<tr>
+<td>id</td>
+<td>INT</td>
+<td>eg. 918872936</td>
+</tr>
+<tr>
+<td>key</td>
+<td>STRING</td>
+<td>eg. &#39;54a44eb00b63f4d1cdde9...&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>id</code> and <code>key</code> can be generated in <code>https://panel.bitclude.com</code>
+</aside>
 <h2 id='get-wallets-status'>Get wallets status</h2><pre class="highlight json tab-json"><code><span class="w">         </span><span class="p">{</span><span class="w">
              </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
              </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1006,9 +1052,9 @@ You must generate <code>key</code> in your panel..
          </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint allow you to get information about currencies, minimum transfers, fees, and online status.</p>
-<h3 id='http-request-11'>HTTP Request</h3>
+<h3 id='http-request-12'>HTTP Request</h3>
 <p><code>GET https://api.bitclude.com/</code></p>
-<h3 id='query-parameters-11'>Query Parameters</h3>
+<h3 id='query-parameters-12'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1053,9 +1099,9 @@ You must generate <code>key</code> in your panel..
             </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint allow you to get information about limits of user.</p>
-<h3 id='http-request-12'>HTTP Request</h3>
+<h3 id='http-request-13'>HTTP Request</h3>
 <p><code>GET https://api.bitclude.com/</code></p>
-<h3 id='query-parameters-12'>Query Parameters</h3>
+<h3 id='query-parameters-13'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1109,9 +1155,9 @@ You must generate <code>key</code> in your panel..
          </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint allow you to get information about limits of user.</p>
-<h3 id='http-request-13'>HTTP Request</h3>
+<h3 id='http-request-14'>HTTP Request</h3>
 <p><code>GET https://api.bitclude.com/</code></p>
-<h3 id='query-parameters-13'>Query Parameters</h3>
+<h3 id='query-parameters-14'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1168,9 +1214,9 @@ You must generate <code>key</code> in your panel..
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint allow you to get information about login history.</p>
-<h3 id='http-request-14'>HTTP Request</h3>
+<h3 id='http-request-15'>HTTP Request</h3>
 <p><code>GET https://api.bitclude.com/</code></p>
-<h3 id='query-parameters-14'>Query Parameters</h3>
+<h3 id='query-parameters-15'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1209,9 +1255,9 @@ You must generate <code>key</code> in your panel..
          </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint allow you to freez your account.</p>
-<h3 id='http-request-15'>HTTP Request</h3>
+<h3 id='http-request-16'>HTTP Request</h3>
 <p><code>GET https://api.bitclude.com/</code></p>
-<h3 id='query-parameters-15'>Query Parameters</h3>
+<h3 id='query-parameters-16'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1261,9 +1307,9 @@ You must generate <code>key</code> in your panel..
          </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint allow you to get your current active offers.</p>
-<h3 id='http-request-16'>HTTP Request</h3>
+<h3 id='http-request-17'>HTTP Request</h3>
 <p><code>GET https://api.bitclude.com/</code></p>
-<h3 id='query-parameters-16'>Query Parameters</h3>
+<h3 id='query-parameters-17'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1310,9 +1356,9 @@ You must generate <code>key</code> in your panel..
         </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint allow you to check rate of conversion.</p>
-<h3 id='http-request-17'>HTTP Request</h3>
+<h3 id='http-request-18'>HTTP Request</h3>
 <p><code>GET https://api.bitclude.com/</code></p>
-<h3 id='query-parameters-17'>Query Parameters</h3>
+<h3 id='query-parameters-18'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1375,9 +1421,9 @@ You must generate <code>key</code> in your panel..
          </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint allow you to simple convert your currencies.</p>
-<h3 id='http-request-18'>HTTP Request</h3>
+<h3 id='http-request-19'>HTTP Request</h3>
 <p><code>GET https://api.bitclude.com/</code></p>
-<h3 id='query-parameters-18'>Query Parameters</h3>
+<h3 id='query-parameters-19'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1436,9 +1482,9 @@ You must generate <code>key</code> in your panel..
          </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint allow you to buy orders with &#39;limit&#39; order.</p>
-<h3 id='http-request-19'>HTTP Request</h3>
+<h3 id='http-request-20'>HTTP Request</h3>
 <p><code>GET https://api.bitclude.com/</code></p>
-<h3 id='query-parameters-19'>Query Parameters</h3>
+<h3 id='query-parameters-20'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1507,9 +1553,9 @@ You must generate <code>key</code> in your panel..
          </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint allow you to sell orders with &#39;limit&#39; order.</p>
-<h3 id='http-request-20'>HTTP Request</h3>
+<h3 id='http-request-21'>HTTP Request</h3>
 <p><code>GET https://api.bitclude.com/</code></p>
-<h3 id='query-parameters-20'>Query Parameters</h3>
+<h3 id='query-parameters-21'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1578,9 +1624,9 @@ You must generate <code>key</code> in your panel..
          </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint allow you to cancel your oder</p>
-<h3 id='http-request-21'>HTTP Request</h3>
+<h3 id='http-request-22'>HTTP Request</h3>
 <p><code>GET https://api.bitclude.com/</code></p>
-<h3 id='query-parameters-21'>Query Parameters</h3>
+<h3 id='query-parameters-22'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1630,9 +1676,9 @@ You must generate <code>key</code> in your panel..
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint allow you to bulkoffers cancel.</p>
-<h3 id='http-request-22'>HTTP Request</h3>
+<h3 id='http-request-23'>HTTP Request</h3>
 <p><code>GET https://api.bitclude.com/</code></p>
-<h3 id='query-parameters-22'>Query Parameters</h3>
+<h3 id='query-parameters-23'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
